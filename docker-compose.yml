@@ -6,3 +6,4 @@ services:
     ports:
       - "8080:80"
     restart: unless-stopped
+# Force rebuild deploy
