@@ -1,0 +1,21 @@
+name: Deploy to Hostinger VPS
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_IP }}
+          username: root
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd /docker/aedp-portal
+            git pull origin main
+            docker compose down
+            docker compose up -d --build

@@ -1,4 +1,24 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+import logoAet from '../assets/aet.jpg';
+import logoAcp from '../assets/acp.jpg';
+import logoLiz from '../assets/liz.jpg';
+import logoPolish from '../assets/polish.jpg';
+import logoAcc from '../assets/acc.jpg';
+import logoEu from '../assets/eu.jpg';
+import logoAdac from '../assets/adac.jpg';
+import logoMosaic from '../assets/mosaic.jpg';
+
+const partners = ref([
+  { id: 1, name: 'Amboseli Ecosystem Trust', src: logoAet },
+  { id: 2, name: 'Amboseli Conservation Program', src: logoAcp },
+  { id: 3, name: 'Liz Claiborne Art Ortenberg Foundation', src: logoLiz },
+  { id: 4, name: 'Polish aid', src: logoPolish },
+  { id: 5, name: 'African Conservation Centre', src: logoAcc },
+  { id: 6, name: 'European Union', src: logoEu },
+  { id: 7, name: 'ADAC', src: logoAdac },
+  { id: 8, name: 'Mosaic', src: logoMosaic }
+]);
 </script>
 
 <template>
@@ -10,8 +30,10 @@
         open data, and community engagement across Amboseli.
       </p>
       
-      <div class="logos-container">
-        <img src="../assets/partner-logos.png" alt="Partner Logos" class="partner-logos" />
+      <div class="logos-grid">
+        <div v-for="partner in partners" :key="partner.id" class="partner-logo-wrapper">
+          <img :src="partner.src" :alt="partner.name" class="partner-logo" />
+        </div>
       </div>
     </div>
   </section>
@@ -40,14 +62,26 @@
   margin-bottom: 4rem;
 }
 
-.logos-container {
+.logos-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-.partner-logos {
-  width: 100%;
-  height: auto;
-  display: block;
+.partner-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px; 
+}
+
+.partner-logo {
+  max-width: 200px;
+  max-height: 100%;
+  object-fit: contain;
 }
 </style>

@@ -6,7 +6,7 @@
     <div class="container">
       <div class="content-grid">
         <div class="image-column">
-          <img src="../assets/hero-image.png" alt="Maasai woman at server" class="hero-image" />
+          <img src="../assets/masai-image.jpg" alt="Maasai woman at server" class="hero-image" />
         </div>
         
         <div class="text-column">
