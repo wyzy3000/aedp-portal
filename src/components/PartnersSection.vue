@@ -30,9 +30,16 @@ const partners = ref([
         open data, and community engagement across Amboseli.
       </p>
       
-      <div class="logos-grid">
-        <div v-for="partner in partners" :key="partner.id" class="partner-logo-wrapper">
-          <img :src="partner.src" :alt="partner.name" class="partner-logo" />
+      <div class="slider-container">
+        <div class="logos-track">
+          <!-- First set of logos -->
+          <div v-for="partner in partners" :key="partner.id" class="partner-logo-wrapper">
+            <img :src="partner.src" :alt="partner.name" class="partner-logo" />
+          </div>
+          <!-- Second duplicated set for seamless looping -->
+          <div v-for="partner in partners" :key="'dup-' + partner.id" class="partner-logo-wrapper">
+            <img :src="partner.src" :alt="partner.name" class="partner-logo" />
+          </div>
         </div>
       </div>
     </div>
@@ -42,6 +49,7 @@ const partners = ref([
 <style scoped>
 .partners-section {
   padding: 5rem 0;
+  overflow: hidden; /* Prevent horizontal scrollbar on viewport */
 }
 
 .text-center {
@@ -62,14 +70,28 @@ const partners = ref([
   margin-bottom: 4rem;
 }
 
-.logos-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 3rem;
-  max-width: 1000px;
+/* Slider CSS */
+.slider-container {
+  overflow: hidden;
+  max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  /* Optional gradient fades on edges for a smoother look */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logos-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 4rem;
+  padding-right: 4rem; /* Match gap so the loop point doesn't bump */
+  animation: scroll 35s linear infinite;
+}
+
+.logos-track:hover {
+  animation-play-state: paused;
 }
 
 .partner-logo-wrapper {
@@ -80,8 +102,27 @@ const partners = ref([
 }
 
 .partner-logo {
-  max-width: 200px;
+  max-width: 180px;
   max-height: 100%;
   object-fit: contain;
+  /* Subtle grayscale effect until hover makes it look professional */
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.partner-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Translate by exactly -50% to snap back invisibly */
+    transform: translateX(-50%);
+  }
 }
 </style>
