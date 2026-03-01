@@ -98,22 +98,13 @@ const partners = ref([
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px; 
+  height: 96px; /* Increased by 20% from 80px */
 }
 
 .partner-logo {
-  max-width: 180px;
+  max-width: 216px; /* Increased by 20% from 180px */
   max-height: 100%;
   object-fit: contain;
-  /* Subtle grayscale effect until hover makes it look professional */
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease;
-}
-
-.partner-logo:hover {
-  filter: grayscale(0%);
-  opacity: 1;
 }
 
 @keyframes scroll {
