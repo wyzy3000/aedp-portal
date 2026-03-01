@@ -98,11 +98,11 @@ const partners = ref([
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 96px; /* Increased by 20% from 80px */
+  height: 112px; /* Increased by 40% from original 80px */
 }
 
 .partner-logo {
-  max-width: 216px; /* Increased by 20% from 180px */
+  max-width: 252px; /* Increased by 40% from original 180px */
   max-height: 100%;
   object-fit: contain;
 }

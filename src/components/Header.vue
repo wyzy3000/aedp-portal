@@ -25,7 +25,7 @@
 }
 
 .logo img {
-  height: 72px; /* Increased by 20% from 60px */
+  height: 84px; /* Increased by 40% from original 60px */
   object-fit: contain;
 }
 </style>
