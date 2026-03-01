@@ -46,7 +46,8 @@
 
 .hero-image {
   width: 100%;
-  height: auto;
+  height: 50vh;
+  object-fit: cover; /* This makes it fill the 50vh space without stretching/distorting the aspect ratio */
   display: block;
 }
 
