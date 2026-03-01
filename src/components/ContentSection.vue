@@ -30,13 +30,13 @@
 
 <style scoped>
 .content-section {
-  padding: 4rem 0;
+  padding: 6rem 0;
 }
 
 .content-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 5rem;
   align-items: center;
 }
 
@@ -47,41 +47,35 @@
 .hero-image {
   width: 100%;
   height: auto;
-  border-radius: 4px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   display: block;
 }
 
 .text-column {
-  padding-right: 2rem;
+  padding-right: 0;
 }
 
 .content-title {
-  font-size: 2.5rem;
+  font-size: 3.25rem;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 2rem;
-  color: var(--color-text-dark);
+  color: #000000;
 }
 
 .content-body {
-  color: var(--color-text-light);
-  font-size: 1.05rem;
+  color: #000000;
+  font-size: 1.1rem;
   margin-bottom: 2.5rem;
 }
 
 .content-body p {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 @media (max-width: 992px) {
   .content-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
-  }
-  
-  .text-column {
-    padding-right: 0;
   }
 }
 </style>
