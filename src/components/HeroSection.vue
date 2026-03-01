@@ -13,7 +13,7 @@
         This Ecosystem Information Portal presents narrated, interactive summaries in Maa and Swahili, translating long-term rangeland monitoring data into practical knowledge for communities, partners, and decision-makers across the Amboseli landscape.
       </p>
       
-      <button class="btn-primary hero-btn">Open Portal : Hali ya Mazingira – Amboseli Kajiado</button>
+      <router-link to="/portal" class="btn-primary hero-btn" style="display: inline-block;">Open Portal : Hali ya Mazingira – Amboseli Kajiado</router-link>
     </div>
   </section>
 </template>

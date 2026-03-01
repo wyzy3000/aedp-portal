@@ -21,7 +21,7 @@
             </p>
           </div>
           
-          <button class="btn-primary">Learn More</button>
+          <router-link to="/portal" class="btn-primary" style="display: inline-block;">Open Portal</router-link>
         </div>
       </div>
     </div>
